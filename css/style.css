@@ -1,0 +1,412 @@
+/********************************
+* BASIC SETUP
+********************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*width/height includes content, padding, border*/
+}
+
+html,
+body {
+    background-color: #fff;
+    color: rgb(50, 50, 60);
+    font-family: 'Lato', 'Arial', sans-serif; /*Arial & sans-serif are backup fonts*/
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility; /*Perfectly renders fonts*/
+    overflow-x: hidden;
+}
+
+/********************************
+* REUSABLE COMPONENTS
+********************************/
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 75px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+/* ----- HEADINGS ----- */
+h1, h2, h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 0; /* removes white space at top of page */
+    margin-bottom: 20px; 
+    font-size: 250%;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+h4 {
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 10px;
+    background-color: rgb(107, 107, 107);
+}
+
+ol {
+    padding-left: 0.5em;
+}
+
+ol li {
+    list-style-type: decimal; /* or 'decimal-leading-zero', 'upper-alpha', 'lower-alpha'... */
+    list-style-position: outside; /* or 'inside' */
+    margin-left: 1em; /* gives 'room' for the numbers to appear in */
+    padding-bottom: 10px;
+    
+}
+
+
+h2:after {
+    display: block;
+    height: 2px;
+    width: 100px;
+    background-color: #d58000;
+    content: " ";
+    margin: 50px auto;
+}
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;
+    width: 75%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 90%;
+    line-height: 200%;
+    margin: 5% 15%;
+}
+
+p {
+    line-height: 150%;
+    margin: 4%;
+    text-align: center;
+}
+/******************************************
+* HEADER SECTION
+*/
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, 0.5)),url(img/header-background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* 100% of viewport */
+    background-attachment: fixed;
+}
+
+.title {
+    padding-top: 150px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+/******************************************
+* NAVIGATION SECTION
+*/
+
+.logo, .logo-sticky {
+    display: block;
+    color: red;
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+    font-family: cursive;
+}
+
+.logo-sticky {
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    font-size: 90%;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: solid 2px transparent;
+    transition: border-bottom .2s;
+    padding-bottom: 5px;
+    -webkit-transition: border-bottom .2s;
+    -moz-transition: border-bottom .2s;
+    -ms-transition: border-bottom .2s;
+    -o-transition: border-bottom .2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    color: rgb(212, 129, 81);
+    border-bottom: solid 2px #fff;
+    padding-bottom: 5px;
+}
+
+/* Mobile Nav */
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: white;
+}
+
+/* Sticky nav */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 2px rgb(199, 199, 199);
+    z-index: 9999;
+    
+}
+
+.sticky .main-nav {margin-top: 18px;}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 16px 0;
+    color: #555;
+}
+
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active {
+    
+    border-bottom: solid 2px rgb(212, 129, 81);
+}
+
+.sticky .logo {display: none;}
+.sticky .logo-sticky {display: block;}
+
+
+
+
+/******************************************
+* ABOUT SECTION
+*/
+
+.section-about {
+    background-color: rgb(255, 243, 232);
+}
+
+.my-pic {
+    float: right;
+    width: 250px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.intro {
+    background-color: rgb(255, 227, 203);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.intro .long-copy {
+    background-color: rgb(255, 245, 231);
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+/******************************************
+* STEPS SECTION
+*/
+
+.section-steps h3{
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.icon-big {
+    font-size: 400%;
+    display: block;
+    color: rgb(212, 96, 81);
+    text-align: center;
+}
+
+/******************************************
+* GALLERY SECTION
+*/
+
+.purchase-div {
+    margin: 0 auto;
+    background-color: rgb(44, 44, 44);
+    width: 50%;
+}
+
+.section-gallery {
+    background-color: black;
+    color: #fff;
+}
+
+.section-gallery h2{
+    color: #fff;
+}
+
+.section-gallery h3{
+    text-align: center;
+    font-size: 120%;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.section-gallery img {
+    width: 260px;
+    height: 200px;
+    margin-left: 18px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    padding: 5px;
+    
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+
+.section-gallery img:hover{
+    border: 1px solid white;
+    transform: scale(1.1);
+    opacity: .7;
+}
+
+.section-gallery a {
+    position: relative;
+    
+}
+
+
+.section-gallery a span {
+    display:none;
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, .8);
+    color: white;
+}
+
+.section-gallery a:hover span {
+    display: block;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+
+/****************************************
+* CONTACT SECTION
+****************************************/
+
+
+.btn-email {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 3px;
+    border-radius: 5px;
+    border:none;
+    background-color: rgb(202, 202, 202);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.btn-email:hover {
+    background-color: rgb(38, 56, 158);
+    color: whitesmoke;
+}
+
+/****************************************
+* FOOTER SECTION
+****************************************/
+
+.footer-brand {
+    text-align: left;
+    margin-left: 0px;
+}
+
+/****************************************
+* ANIMATIONS
+****************************************/
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3,
+.js--wp-4,
+.js--wp-5,
+.js--wp-6 {
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.js--wp-3 {
+    animation-delay: .5s;
+}
+
+.js--wp-4 {
+    animation-delay: 1s;
+}
